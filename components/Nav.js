@@ -44,7 +44,7 @@ const Nav = () => {
                             <path d='M4 6h16M4 12h16M4 18h16'></path>
                         </svg>
                         :
-                        <svg xmlns='http://www.w3.org/2000/svg' className='absolute top-0 left-0 h-12 w-12 text-gray-500 hover:text-brand dark:text-gray-300' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+                        <svg xmlns='http://www.w3.org/2000/svg' className='absolute top-0 left-0 h-12 w-12 text-brand-dark hover:opacity-80 dark:text-brand' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
                             <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' />
                         </svg>
                     }

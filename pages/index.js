@@ -10,8 +10,9 @@ import { ConnectWalletBtn } from '../components/ConnectWalletBtn'
 
 export default function Root({ chainIds }) {
   const [connectedWallet, setConnectedWallet] = useState(false)
+  const [isCorrectChain, setIsCorrectChain] = useState(false)
   const [connectedWalletMessage, setConnectedWalletMessage] = useState('')
-  const [networkName, setNetworkName] = useState('')
+  const [networkInfo, setNetworkInfo] = useState('')
   const [example, setExample] = useState()
   const router = useRouter()
 
@@ -39,8 +40,15 @@ export default function Root({ chainIds }) {
       const provider = new ethers.providers.Web3Provider(window.ethereum)
       const userNetwork = await provider.getNetwork()
       const signer = provider.getSigner()
-      const networkName = getNameFromChainId(userNetwork.chainId)
-      setNetworkName(networkName)
+      const networkInfo = getNameFromChainId(userNetwork.chainId)
+
+      if (userNetwork.chainId !== 3) {
+        setNetworkInfo('Please change network to Ropsten Testnet in Metamask.')
+        setIsCorrectChain(false)
+      } else {
+        setNetworkInfo(networkInfo)
+        setIsCorrectChain(true)
+      }
 
       try {
         const signerAddress = await signer.getAddress()
@@ -64,32 +72,38 @@ export default function Root({ chainIds }) {
     })
 
     window.ethereum.on('chainChanged', (chainId) => {
-      console.log('chainChanged', parseInt(chainId, 16))
-      setNetworkName(getNameFromChainId(parseInt(chainId, 16)))
+      const id = parseInt(chainId, 16)
+      if (id !== 3) {
+        setNetworkInfo('Please change network to Ropsten Testnet in Metamask.')
+        setIsCorrectChain(false)
+      } else {
+        setNetworkInfo(getNameFromChainId(parseInt(chainId, 16)))
+        setIsCorrectChain(true)
+      }
       // router.reload(window.location.pathname)
     })
   }, [chainIds, router, example])
 
   return (
-    <div className="mx-auto text-center px-2 md:px-8 min-h-screen">
+    <div className='mx-auto text-center px-2 md:px-8 min-h-screen'>
 
       {!connectedWallet &&
         <ConnectWalletBtn styles='absolute top-5 left-24' />
       }
 
-      <h1 className="text-2xl md:text-4xl mb-1">app.christof.digital</h1>
+      <h1 className='text-2xl md:text-4xl mb-1'>app.christof.digital</h1>
       <p className='mb-8'>Playground for smart contract interactions...</p>
       <Image src='/icons/programming.svg' width={300} height={150} alt='Contract' />
 
-      <div className="p-4 border border-dashed border-brand-dark dark:border-brand mt-8 overscroll-x-none">
+      <div className='p-4 border border-dashed border-brand-dark dark:border-brand mt-8 overscroll-x-none'>
         {connectedWalletMessage
-          ? <p>Connected wallet: <span className="text-xs">{connectedWalletMessage}</span></p>
+          ? <p>Connected wallet: <span className='text-xs'>{connectedWalletMessage}</span></p>
           : <ConnectWalletBtn />
         }
-        {networkName && <p className="text-md">Network: {networkName}</p>}
+        {networkInfo && <p className='text-md'>Network: {networkInfo}</p>}
       </div>
 
-      {connectedWallet &&
+      {connectedWallet && isCorrectChain &&
         <>
           <h2 className='text-lg mt-10 mb-2'>Examples:</h2>
           <div className='mb-10 max-w-max mx-auto'>

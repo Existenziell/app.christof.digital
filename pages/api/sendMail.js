@@ -7,13 +7,14 @@ sgMail.setApiKey(process.env.NEXT_PUBLIC_MAIL_API_KEY)
 const sendMail = async (req, res) => {
   const { name, email, message } = req.body
   const html = ReactDOMServer.renderToStaticMarkup(htmlEmail(name, message))
+  const notificationMessage = `From: ${name}\nEmail: ${email}\n\n${message}`
 
   // Goes to me
   const notificationMsg = {
     to: process.env.NEXT_PUBLIC_MAIL_TO,
     from: process.env.NEXT_PUBLIC_MAIL_FROM,
-    subject: `Notification: Contact request from ${name} - ${email}`,
-    text: message,
+    subject: `Contact request on app.christof.digital`,
+    text: notificationMessage,
   }
 
   // Goes to the user
