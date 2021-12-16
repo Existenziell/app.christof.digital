@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Social from '../components/Social'
 import PacmanLoader from 'react-spinners/PacmanLoader'
