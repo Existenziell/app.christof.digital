@@ -92,7 +92,7 @@ export default function Root({ chainIds }) {
       }
 
       <h1 className='text-2xl md:text-4xl mb-1'>app.christof.digital</h1>
-      <p className='mb-8'>Playground for smart contract interactions...</p>
+      <p className='mb-8'>Playground for smart contract interactions</p>
       <Image src='/icons/programming.svg' width={300} height={150} alt='Contract' />
 
       <div className='p-4 border border-dashed border-brand-dark dark:border-brand mt-8 overscroll-x-none'>

@@ -54,7 +54,7 @@ const Connect = () => {
 
         <Social />
 
-        <div className='px-4 pt-8 pb-0 sm:px-12 mt-6 shadow w-full bg-cover bg-no-repeat bg-poly rounded-lg bg-white/10 backdrop-blur-md text-left text-brand-dark dark:text-brand'>
+        <div className='px-4 pt-8 pb-0 sm:px-12 mt-6 shadow w-full bg-cover bg-no-repeat bg-poly rounded-lg bg-white/10 backdrop-blur-md text-left text-brand-dark'>
           <form onSubmit={submitForm}>
 
             <div className='relative mb-8'>
@@ -62,25 +62,25 @@ const Connect = () => {
               <label htmlFor='name'
                 className='absolute -top-5 left-0 text-sm transition-all
                             peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-placeholder-shown:left-4
-                            peer-focus:-top-5 peer-focus:left-0 peer-focus:text-brand-dark dark:peer-focus:text-brand peer-focus:text-sm'>Name</label>
+                            peer-focus:-top-5 peer-focus:left-0 peer-focus:text-brand-dark peer-focus:text-sm'>Name</label>
             </div>
             <div className='relative mb-8'>
               <input id='email' type='email' name='email' onChange={setData} required disabled={sending || isSuccess} className='peer h-10 w-full placeholder-transparent focus:outline-none bg-white/10 backdrop-blur-md rounded pl-4' placeholder='Email' />
               <label htmlFor='email'
                 className='absolute -top-5 left-0 text-sm transition-all
                             peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-placeholder-shown:left-4
-                            peer-focus:-top-5 peer-focus:left-0 peer-focus:text-brand-dark dark:peer-focus:text-brand peer-focus:text-sm'>Email</label>
+                            peer-focus:-top-5 peer-focus:left-0 peer-focus:text-brand-dark peer-focus:text-sm'>Email</label>
             </div>
             <div className='relative'>
               <textarea id='message' name='message' onChange={setData} rows='10' required disabled={sending} className='peer h-full w-full placeholder-transparent focus:outline-none bg-white/10 backdrop-blur-md rounded pl-4 py-4' placeholder='Message'></textarea>
               <label htmlFor='message'
                 className='absolute -top-5 left-0 text-sm transition-all
                             peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-placeholder-shown:left-4
-                            peer-focus:-top-5 peer-focus:left-0 peer-focus:text-brand-dark dark:peer-focus:text-brand peer-focus:text-sm'>Message</label>
+                            peer-focus:-top-5 peer-focus:left-0 peer-focus:text-brand-dark peer-focus:text-sm'>Message</label>
             </div>
 
             {errorMsg ?
-              <div className='text-left bg-brand-dark dark:bg-brand text-brand dark:text-brand-dark p-4 mb-8 mt-4'>
+              <div className='text-left bg-brand-dark  text-brand -dark p-4 mb-8 mt-4'>
                 {errorMsg}
               </div>
               :

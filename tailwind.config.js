@@ -10,9 +10,12 @@ module.exports = {
         ],
       },
       colors: {
-        'brand': '#a6d1c9',
+        brand: '#a6d1c9',
         'brand-dark': '#282b29',
-        'highlight': '#C90076',
+        highlight: '#C90076',
+      },
+      backgroundImage: {
+        poly: 'url(/icons/poly.svg)',
       },
     },
   },
@@ -20,4 +23,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-};
+}

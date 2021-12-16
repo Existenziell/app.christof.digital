@@ -4,6 +4,7 @@ import { useState } from 'react'
 const Nav = () => {
     const paths = [
         { name: 'Root', url: '/' },
+        { name: 'Play', url: '/play' },
         { name: 'Connect', url: '/connect' },
     ]
 
@@ -20,7 +21,7 @@ const Nav = () => {
         <nav>
             {/* Mobile menu */}
             {isOpen &&
-                <ul className='mobile-menu left-0 right-0 top-0 bottom-0 pt-20 bg-white z-10 dark:bg-brand-dark dark:text-gray-300 relative h-screen'>
+                <ul className='mobile-menu left-0 right-0 top-0 bottom-0 pt-20 z-10 text-brand-dark bg-brand dark:bg-brand-dark dark:text-gray-300 relative h-screen'>
                     {paths.map(path => (
                         <li key={path.name}>
                             <a
@@ -28,7 +29,7 @@ const Nav = () => {
                                 onClick={intercept}
                                 className={`${router.pathname === path.url && 'active-nav shadow-sm'} 
                                 w-full block text-2xl md:text-4xl text-center leading-loose px-8 py-2 md:py-8 
-                                hover:bg-brand hover:text-white transition-all`}>
+                                hover:bg-brand-dark hover:text-brand dark:hover:bg-brand dark:hover:text-brand-dark transition-all`}>
                                 {path.name}
                             </a>
                         </li>
