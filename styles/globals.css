@@ -1,0 +1,58 @@
+/* --------------------------------------------------------
+Style Sheet for app.christof.digital
+
+version: 0.9
+last modified: 15.12.2021 by Christof Bauer
+author: Christof Bauer
+email: bauer.christof@gmail.com
+----------------------------------------------------------*/
+
+:root {
+  --color-brand: #a6d1c9;
+  --color-brand-dark: #282b29;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ==========================================================================
+	General overrides and utilities
+	========================================================================== */
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  @apply bg-highlight bg-opacity-50;
+}
+
+::-moz-selection {
+  @apply bg-highlight bg-opacity-50;
+}
+
+.link {
+  @apply underline underline-offset-2 outline-none transition-all duration-300;
+}
+
+.link:hover {
+  @apply no-underline rounded transition-all duration-500 text-white px-1 bg-brand-dark dark:bg-brand; 
+}
+
+
+/* ==========================================================================
+	Forms 
+	========================================================================== */
+
+.button {
+  @apply bg-brand-dark text-brand py-4 px-8 rounded shadow-lg transition-all cursor-pointer
+    hover:shadow-none hover:text-white dark:bg-brand dark:text-brand-dark
+    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-dark;
+}
+
+.example input[type='text'] {
+  @apply border p-4 text-brand-dark
+    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-dark;
+}
