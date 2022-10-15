@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Image from 'next/image'
-import onboard from '../lib/onboard'
 
 export const ConnectWallet = ({ styles }) => {
   const [overlayShown, setOverlayShown] = useState(false)
@@ -13,8 +12,7 @@ export const ConnectWallet = ({ styles }) => {
   return (
     <div>
       <button
-        onClick={() => onboard.walletSelect()}
-        // onClick={() => setOverlayShown(true)}
+        onClick={() => setOverlayShown(true)}
         className={`${styles} connect-button`}>
         Connect Wallet
       </button>

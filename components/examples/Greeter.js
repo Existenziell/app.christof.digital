@@ -2,6 +2,7 @@ import GreeterContract from '../../src/artifacts/contracts/Greeter.sol/Greeter.j
 import { useState, useRef } from 'react'
 import { ethers } from 'ethers'
 import ClimbingBoxLoader from 'react-spinners/ClimbingBoxLoader'
+import { greeterAddress } from '../../config'
 
 export const Greeter = () => {
   const [receiving, setReceiving] = useState(false)
@@ -14,7 +15,7 @@ export const Greeter = () => {
   async function fetchGreeting() {
     setReceiving(true)
     const provider = new ethers.providers.Web3Provider(window.ethereum)
-    const contract = new ethers.Contract(process.env.NEXT_PUBLIC_GREETER_ADDRESS, GreeterContract.abi, provider)
+    const contract = new ethers.Contract(greeterAddress, GreeterContract.abi, provider)
     try {
       const data = await contract.greet()
       setGreetingState(data)
@@ -34,7 +35,7 @@ export const Greeter = () => {
     setReceiving(true)
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     const signer = provider.getSigner()
-    const contract = new ethers.Contract(process.env.NEXT_PUBLIC_GREETER_ADDRESS, GreeterContract.abi, signer)
+    const contract = new ethers.Contract(greeterAddress, GreeterContract.abi, signer)
     const transaction = await contract.setGreeting(newGreeting)
     await transaction.wait()
     greeting
@@ -47,10 +48,10 @@ export const Greeter = () => {
   }
 
   return (
-    <div className="flex flex-col gap-6 w-full items-center">
-      <div className="flex gap-4">
+    <div className="flex flex-col gap-6 w-full items-center overflow-hidden">
+      <div className="flex flex-col md:flex-row gap-4 text-sm">
         <button className="button" onClick={fetchGreeting} disabled={receiving}>
-          Fetch greeting from the blockchain
+          Fetch greeting from blockchain
         </button>
         <input type='text' disabled
           placeholder="Fetched greeting"
@@ -59,7 +60,7 @@ export const Greeter = () => {
         />
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex flex-col md:flex-row gap-4">
         <input type='text' disabled={receiving}
           className="border p-4 text-center"
           onChange={e => setNewGreetingState(e.target.value)}

@@ -7,7 +7,7 @@ import { Greeter } from '../components/examples/Greeter'
 import { Example1 } from '../components/examples/Example1'
 import { Example2 } from '../components/examples/Example2'
 import { ConnectWallet } from '../components/ConnectWalletBtn'
-// import { onboard } from '../lib/onboard'
+import { shortenAddress } from '../lib/shortenAddress'
 
 export default function Root({ chainIds }) {
   const [isWalletConnected, setIsWalletConnected] = useState(false)
@@ -42,10 +42,8 @@ export default function Root({ chainIds }) {
       const signer = provider.getSigner()
       const networkInfo = getNameFromChainId(userNetwork.chainId)
 
-      if (userNetwork.chainId !== 3) {
-        // const check = await onboard.walletCheck()
-        // console.log(check);
-        setNetworkInfo('Please change network to Ropsten Testnet.')
+      if (userNetwork.chainId !== parseInt(process.env.NEXT_PUBLIC_HARDHAT_CHAIN_ID)) {
+        setNetworkInfo('Please change network to Sepolia Testnet (more info at https://sepolia.dev/)')
         setIsCorrectChain(false)
       } else {
         setNetworkInfo(networkInfo)
@@ -75,8 +73,8 @@ export default function Root({ chainIds }) {
 
     window.ethereum.on('chainChanged', (chainId) => {
       const id = parseInt(chainId, 16)
-      if (id !== 3) {
-        setNetworkInfo('Please change network to Ropsten Testnet.')
+      if (id !== process.env.NEXT_PUBLIC_HARDHAT_CHAIN_ID) {
+        setNetworkInfo('Please change network to Sepolia Testnet (more info at https://sepolia.dev/')
         setIsCorrectChain(false)
       } else {
         setNetworkInfo(getNameFromChainId(parseInt(chainId, 16)))
@@ -95,14 +93,17 @@ export default function Root({ chainIds }) {
 
       <h1 className='text-2xl md:text-4xl mb-1'>app.christof.digital</h1>
       <p className='mb-8'>Playground for smart contract interactions</p>
-      <Image src='/icons/programming.svg' width={300} height={150} alt='Contract' />
+      <Image src='/root.webp' width={400} height={245} alt='Chris'
+        objectFit='cover'
+        className='rounded'
+      />
 
       <div className='p-4 border border-brand-dark dark:border-brand mt-8 overscroll-x-none'>
         {connectedWalletAddress
-          ? <p>Connected wallet: <span className='text-xs'>{connectedWalletAddress}</span></p>
-          : <ConnectWallet />
+          ? <p>Connected wallet: {shortenAddress(connectedWalletAddress)}</p>
+          : <div className='mb-2'><ConnectWallet /></div>
         }
-        {networkInfo && <p className='text-md mt-4'>Network: {networkInfo}</p>}
+        {networkInfo && <p className='text-md'>Network: {networkInfo}</p>}
       </div>
 
       {isWalletConnected && isCorrectChain &&
