@@ -81,7 +81,7 @@ export const Greeter = () => {
           </div>
         </>
         :
-        <div className="border border-dashed border-brand-dark dark:border-brand p-4">
+        <div className="border border-brand-dark dark:border-brand p-4">
           {greetingMessage && <span>{greetingMessage}</span>}
         </div>
       }

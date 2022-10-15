@@ -11,14 +11,18 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^7.6.0",
+    "bnc-onboard": "^1.36.0",
+    "chart.js": "^2.9.4",
     "dotenv": "^10.0.0",
     "ethers": "^5.5.2",
     "framer-motion": "^5.5.3",
     "next": "latest",
     "nextjs-progressbar": "^0.0.13",
     "react": "17.0.2",
+    "react-chartjs-2": "^2.11.1",
     "react-dom": "17.0.2",
-    "react-spinners": "^0.11.0"
+    "react-spinners": "^0.11.0",
+    "web3": "^1.6.1"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",

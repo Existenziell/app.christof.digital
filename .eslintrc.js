@@ -26,9 +26,7 @@ module.exports = {
   },
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
-    'react/react-in-jsx-scope': 'off',
-    'react/prop-types': 0,
-    indent: 'off',
+    '@next/next/no-page-custom-font': 'off',
     quotes: ['error', 'single', { allowTemplateLiterals: true }],
     'space-before-function-paren': ['error', {
       anonymous: 'never',
@@ -37,5 +35,5 @@ module.exports = {
     }],
     'operator-linebreak': ['off'],
   },
-  ignorePatterns: ['coverage.json', '/coverage/*', '/test/*', '/pages/_app.js'],
+  ignorePatterns: ['coverage.json', '/coverage/*', '/test/*'],
 }

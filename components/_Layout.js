@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
       <Nav />
       <DarkModeToggle />
 
-      <main className='w-full py-24 px-4 md:px-8 text-center text-brand-dark bg-brand bg-repeat dark:bg-brand-dark dark:text-brand'>
+      <main className='w-full min-h-[calc(100vh-49px)] py-24 px-4 md:px-8 text-center text-brand-dark bg-brand bg-repeat dark:bg-brand-dark dark:text-brand'>
         {children}
       </main>
 

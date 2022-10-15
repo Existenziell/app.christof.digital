@@ -10,9 +10,9 @@ module.exports = {
         ],
       },
       colors: {
-        brand: '#a6d1c9',
+        'brand': '#a6d1c9',
         'brand-dark': '#282b29',
-        highlight: '#C90076',
+        'cta': '#D6A269',
       },
       backgroundImage: {
         poly: 'url(/icons/poly.svg)',

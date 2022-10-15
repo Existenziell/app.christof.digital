@@ -10,6 +10,7 @@ email: bauer.christof@gmail.com
 :root {
   --color-brand: #a6d1c9;
   --color-brand-dark: #282b29;
+  --color-cta: #D6A269;
 }
 
 @tailwind base;
@@ -26,11 +27,11 @@ html, body {
 }
 
 ::selection {
-  @apply bg-highlight bg-opacity-50;
+  @apply bg-cta bg-opacity-50;
 }
 
 ::-moz-selection {
-  @apply bg-highlight bg-opacity-50;
+  @apply bg-cta bg-opacity-50;
 }
 
 .link {
@@ -63,5 +64,15 @@ html, body {
 
 .example input[type='text'] {
   @apply border p-4 text-brand-dark
+    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-dark;
+}
+
+.connect-button {
+  @apply px-4 py-2 border border-brand-dark dark:border-brand 
+  hover:bg-brand-dark hover:text-brand dark:hover:bg-brand dark:hover:text-brand-dark transition-all;
+}
+
+select {
+  @apply border px-4 py-2 text-brand-dark rounded-sm min-w-[200px]
     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-dark;
 }
