@@ -105,9 +105,9 @@ export default function Root({ chainIds }) {
           <div>
             <p className='text-md'>Network: {networkInfo}</p>
             {!connectedWalletAddress &&
-              <div className='text-xs flex items-center justify-center gap-4'>
-                <p>Find more information about Sepolia <a href='https://sepolia.dev/' target='_blank' rel='noopener noreferrer nofollow' className='link'>here</a></p>
-                <Image src='/icons/dolphin.png' alt='Sepolia Dolphin' width={50} height={100} />
+              <div className='text-xs flex items-center justify-center gap-4 mt-2'>
+                <p>Find more information<br /> about Sepolia <a href='https://sepolia.dev/' target='_blank' rel='noopener noreferrer nofollow' className='link'>here</a></p>
+                <Image src='/icons/dolphin.png' alt='Sepolia Dolphin' width={50} height={100} className='hover:animate-pulse' />
               </div>
             }
           </div>
