@@ -62,12 +62,10 @@ export default function Root({ chainIds }) {
     setAddress()
 
     window.ethereum.on('connect', (accounts) => {
-      // console.log('Connected', accounts)
       // router.reload(window.location.pathname)
     })
 
     window.ethereum.on('accountsChanged', (accounts) => {
-      // console.log('accountsChanged', accounts)
       router.reload(window.location.pathname)
     })
 
