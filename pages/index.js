@@ -89,7 +89,7 @@ export default function Root({ chainIds }) {
         <ConnectWallet styles='absolute top-5 left-24' />
       }
 
-      <h1 className='text-2xl md:text-4xl mb-1'>app.christof.digital</h1>
+      <h1 className='text-4xl md:text-6xl mb-1'>app.christof.digital</h1>
       <p className='mb-8'>Playground for smart contract interactions</p>
       <Image src='/root.webp' width={400} height={245} alt='Chris'
         objectFit='cover'
@@ -101,7 +101,17 @@ export default function Root({ chainIds }) {
           ? <p>Connected wallet: {shortenAddress(connectedWalletAddress)}</p>
           : <div className='mb-2'><ConnectWallet /></div>
         }
-        {networkInfo && <p className='text-md'>Network: {networkInfo}</p>}
+        {networkInfo &&
+          <div>
+            <p className='text-md'>Network: {networkInfo}</p>
+            {!connectedWalletAddress &&
+              <div className='text-xs flex items-center justify-center gap-4'>
+                <p>Find more information about Sepolia <a href='https://sepolia.dev/' target='_blank' rel='noopener noreferrer nofollow' className='link'>here</a></p>
+                <Image src='/icons/dolphin.png' alt='Sepolia Dolphin' width={50} height={100} />
+              </div>
+            }
+          </div>
+        }
       </div>
 
       {isWalletConnected && isCorrectChain &&
@@ -109,7 +119,7 @@ export default function Root({ chainIds }) {
           <h2 className='text-lg mt-10 mb-2'>Examples:</h2>
           <div className='mb-10 max-w-max mx-auto'>
             {examples.map(ex => (
-              <div className='' key={ex.id}>
+              <div key={ex.id}>
                 <button onClick={() => { ex.id !== example ? setExample(ex.id) : setExample(false) }} className='link cursor-pointer'>{ex.name}</button>
               </div>
             ))}

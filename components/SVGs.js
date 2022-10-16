@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 
 const SVGs = () => {
-  const [drawing, setDrawing] = useState()
+  const [drawing, setDrawing] = useState(true)
 
   const draw = {
     hidden: { pathLength: 0, opacity: 0 },

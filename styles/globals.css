@@ -39,7 +39,7 @@ html, body {
 }
 
 .link:hover {
-  @apply no-underline rounded transition-all duration-500 text-white px-1 bg-brand-dark dark:bg-brand; 
+  @apply no-underline text-cta transition-all; 
 }
 
 
@@ -73,6 +73,12 @@ html, body {
 }
 
 select {
-  @apply border px-4 py-2 text-brand-dark rounded-sm min-w-[200px]
-    focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-dark;
+  @apply border-none px-4 h-10 text-brand-dark rounded-sm w-[150px]
+    focus:outline-none ;
+}
+
+
+.dashboard input[type='text'] {
+  @apply border-none px-4 h-10 text-brand-dark rounded-sm w-[150px] placeholder:text-brand-dark
+    focus:outline-none;
 }

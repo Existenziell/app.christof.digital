@@ -41,9 +41,9 @@ const Connect = () => {
       </Head>
 
       <div className='flex flex-col items-center justify-center px-4 md:px-8 lg:w-2/3 lg:mx-auto'>
-        <h1 className='text-4xl md:text-6xl mb-12'>Let&apos;s connect</h1>
+        <h1 className='text-4xl md:text-6xl mb-10'>Let&apos;s connect</h1>
         <div className='md:w-2/3'>
-          <p className='text-lg leading-relaxed mb-8'>
+          <p className='text-lg leading-snug mb-8'>
             I am excited to hear from you!{' '}
             Please, feel free to write in your own language.{' '}
             Languages I understand without Translator are:{' '}
