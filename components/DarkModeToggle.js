@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 const DarkModeToggle = () => {
   const [darkmode, setDarkmode] = useState()
 
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     // First check localstorage
     if (localStorage.theme === 'dark') {
@@ -16,6 +17,7 @@ const DarkModeToggle = () => {
       checkUserPreference()
     }
   }, [])
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   const setLight = () => {
     localStorage.theme = 'light'

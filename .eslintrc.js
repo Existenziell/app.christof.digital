@@ -27,6 +27,7 @@ module.exports = {
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
     '@next/next/no-page-custom-font': 'off',
+    '@next/next/no-img-element': 'off',
     quotes: ['error', 'single', { allowTemplateLiterals: true }],
     'space-before-function-paren': ['error', {
       anonymous: 'never',
