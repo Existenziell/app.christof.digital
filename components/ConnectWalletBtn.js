@@ -20,7 +20,7 @@ export const ConnectWallet = ({ styles }) => {
         <div className='flex items-center justify-center'>
 
           {/* Backdrop */}
-          <div className="absolute top-0 left-0 right-0 bottom-0 z-20 w-full h-screen bg-black/40 backdrop-blur"></div>
+          <div onClick={() => setOverlayShown(false)} className="fixed top-0 left-0 right-0 bottom-0 z-20 w-full h-screen bg-black/40 backdrop-blur"></div>
 
           {/* Overlay */}
           <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 rounded-xl bg-white dark:bg-brand-dark w-full md:max-w-2xl p-6'>
