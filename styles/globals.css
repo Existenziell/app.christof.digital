@@ -80,7 +80,84 @@ select {
 }
 
 
+/* ==========================================================================
+	Dashboard 
+	========================================================================== */
+
 .dashboard input[type='text'] {
   @apply border-none px-4 h-10 text-brand-dark rounded-sm w-[150px] placeholder:text-brand-dark
     focus:outline-none;
+}
+
+
+/* ==========================================================================
+	SVGs 
+	========================================================================== */
+
+ /* Arrow */ 
+:root {
+  --dark-svg-color: #635bff;
+  --light-svg-color: #80e9ff;
+}
+svg {
+  cursor: pointer;
+}
+#darkGroup {
+  fill: var(--dark-svg-color);
+}
+#lightGroup {
+  fill: var(--light-svg-color);
+}
+#dark1,
+#light1,
+#dark2 {
+  transition: all 1s ease;
+}
+#dark2 {
+  transform: translateX(-100%);
+}
+svg:hover #light1 {
+  transform: translateX(20%);
+}
+svg:hover #dark1 {
+  transform: translateX(40%);
+  opacity: 0;
+}
+svg:hover #dark2 {
+  transform: translateX(0%);
+}
+
+
+/* Phone */
+#skeleton {
+  animation: fadeInUp 1s;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#bolt g {
+  opacity: 0;
+  animation: dropIn 8s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--order) * 200ms);
+  animation-iteration-count: infinite;
+}
+@keyframes dropIn {
+  20% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  30%, 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
