@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>dApp | christof.digital</title>
-        <meta name='description' content='Blockchain | DeFi | NFT' />
+        <meta name='description' content='christof.digital | Playground for smart contract interactions' />
         <link rel='icon' href='/favicon/favicon.ico' />
         <link rel='apple-touch-icon' sizes='180x180' href='/favicon/apple-touch-icon.png' />
         <link rel='icon' type='image/png' sizes='32x32' href='/favicon/favicon-32x32.png' />
