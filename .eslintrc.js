@@ -27,7 +27,6 @@ module.exports = {
   },
   rules: {
     'comma-dangle': 'off',
-    '@next/next/no-page-custom-font': 'off',
     '@next/next/no-img-element': 'off',
     'quotes': 'off',
     'space-before-function-paren': 'off',
