@@ -1,12 +1,18 @@
 import NextNprogress from 'nextjs-progressbar'
-import Footer from './Footer'
-import Nav from './Nav'
 import DarkModeToggle from './DarkModeToggle'
+import Nav from './Nav'
+import Footer from './Footer'
 
 const Layout = ({ children }) => {
   return (
     <>
-      <NextNprogress startPosition={0.3} stopDelayMs={100} height={3} showOnShallow={true} color='var(--color-brand)' />
+      <NextNprogress
+        startPosition={0.3}
+        stopDelayMs={100}
+        height={3}
+        showOnShallow={true}
+        color='var(--color-brand)'
+      />
       <Nav />
       <DarkModeToggle />
 
