@@ -12,4 +12,5 @@ I have worked with JavaScript for over 20 years and always loved web development
 - TailwindCSS
 - Solidity
 - Vercel
+- PWA
 - Chain: Sepolia
