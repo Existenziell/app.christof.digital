@@ -1,8 +1,8 @@
 {
-  "name": "dapp-christof-digital",
+  "name": "app.christof.digital",
   "author": "Christof Bauer <bauer.christof@gmail.com> (http://christof.digital/)",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,18 +10,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@sendgrid/mail": "^7.6.0",
-    "bnc-onboard": "^1.36.0",
+    "@sendgrid/mail": "^7.7.0",
+    "caniuse-lite": "^1.0.30001418",
     "chart.js": "^2.9.4",
     "dotenv": "^10.0.0",
     "ethers": "^5.5.2",
-    "framer-motion": "^5.5.3",
-    "next": "latest",
-    "nextjs-progressbar": "^0.0.13",
-    "react": "17.0.2",
+    "framer-motion": "^7.5.3",
+    "next": "^12.3.1",
+    "next-pwa": "^5.6.0",
+    "nextjs-progressbar": "^0.0.14",
+    "react": "^18.2.0",
     "react-chartjs-2": "^2.11.1",
-    "react-dom": "17.0.2",
-    "react-spinners": "^0.11.0",
+    "react-dom": "^18.2.0",
+    "react-spinners": "^0.13.6",
     "web3": "^1.6.1"
   },
   "devDependencies": {
@@ -29,16 +30,14 @@
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "autoprefixer": "^10.4.0",
     "chai": "^4.3.4",
-    "eslint": "^7.32.0",
-    "eslint-config-next": "12.0.4",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.2.0",
-    "eslint-plugin-react": "^7.27.1",
+    "eslint": "^8.25.0",
+    "eslint-config-next": "12.3.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26",
+    "eslint-plugin-react": "^7.31.8",
     "ethereum-waffle": "^3.4.0",
     "hardhat": "^2.8.0",
-    "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.5"
+    "postcss": "^8.4.17",
+    "tailwindcss": "^3.1.8"
   }
 }

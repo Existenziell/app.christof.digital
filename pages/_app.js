@@ -16,6 +16,9 @@ function MyApp({ Component, pageProps }) {
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin="true" />
         <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap' />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#242424" />
+        <meta name="theme-color" content="#242424" />
       </Head>
       <Layout>
         <Component {...pageProps} />
