@@ -28,7 +28,7 @@
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
-    "autoprefixer": "^10.4.0",
+    "autoprefixer": "^10.4.12",
     "chai": "^4.3.4",
     "eslint": "^8.25.0",
     "eslint-config-next": "12.3.1",

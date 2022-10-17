@@ -5,9 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: [
-          'Courier Prime',
-        ],
+        sans: ['Courier Prime'],
       },
       colors: {
         'brand': '#a6d1c9',
